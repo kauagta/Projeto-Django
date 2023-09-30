@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if alunos %}
+
+
+
+<div class="text-center div ">
+    <p class="paragrafo">
+        ola seja bem vindo ao meu site,
+        esse foi um pouco do
+        meu desenvolvimento e tambem um
+        pouco do que eu aprendi no meu curso de programção.
+        clique em'visualizar' para voce ver um pouco sobre minhas informações pessoais.
+    </p>
+    
+   
+    {% for aluno in alunos %}
+
+    <a href="{% url 'aluno' id=aluno.id %}" class="btn btn-primary btn-sm">visualizar</a> 
+                
+    {%endfor%}
+</div>
+
+{% else %}
+<p> sem alunos para mostrar no momento</p>
+{% endif %}
+
+{% endblock %}
